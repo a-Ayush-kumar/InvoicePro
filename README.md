@@ -134,4 +134,3 @@ The goal is to build the right foundation first: business rules, data boundaries
 ## License
 
 License details will be added before public distribution.
-# InvoicePro

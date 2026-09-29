@@ -1,0 +1,39 @@
+# OS / editor files
+.vs/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Backend (.NET)
+server/bin/
+server/obj/
+server/.vs/
+server/**/*.user
+server/**/*.rsuser
+server/**/*.db
+server/**/*.db-shm
+server/**/*.db-wal
+server/appsettings.Development.json
+server/appsettings.Local.json
+
+# Frontend / Node
+client/node_modules/
+client/dist/
+client/dist-ssr/
+client/.vite/
+client/.env
+client/.env.*
+client/*.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# Misc
+coverage/

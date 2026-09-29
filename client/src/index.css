@@ -1,0 +1,321 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand Colors (Purple) primary colours*/
+
+  --color-primary-50: #faf7ff;
+  --color-primary-100: #f3ecff;
+  --color-primary-200: #e9ddff;
+  --color-primary-300: #d5beff;
+  --color-primary-400: #bc93ff;
+  --color-primary-500: #9f67ff;
+  --color-primary-600: #8440ff;
+  --color-primary-700: #6d28d9;
+  --color-primary-800: #5b21b6;
+  --color-primary-900: #4b1d95;
+
+  /*Neutral Surface Colors */
+
+  --color-secondary-50: #ffffff;
+  --color-secondary-100: #fafafa;
+  --color-secondary-200: #f4f4f5;
+  --color-secondary-300: #e4e4e7;
+  --color-secondary-400: #d4d4d8;
+  --color-secondary-500: #a1a1aa;
+  --color-secondary-600: #71717a;
+  --color-secondary-700: #52525b;
+  --color-secondary-800: #3f3f46;
+  --color-secondary-900: #18181b;
+
+  /* Accent (Interactive)*/
+
+  --color-accent-50: #fcfaff;
+  --color-accent-100: #f7f2ff;
+  --color-accent-200: #efe5ff;
+  --color-accent-300: #e3d0ff;
+  --color-accent-400: #cba7ff;
+  --color-accent-500: #a855f7;
+  --color-accent-600: #9333ea;
+  --color-accent-700: #7e22ce;
+  --color-accent-800: #6b21a8;
+  --color-accent-900: #581c87;
+
+  /*System Colors (Semantic Tokens) */
+
+  /* Background */
+  --color-background: var(--sys-background);
+  --color-surface: var(--sys-surface);
+  --color-surface-hover: var(--sys-surface-hover);
+  --color-card: var(--sys-card);
+
+  /* Foreground */
+  --color-foreground: var(--sys-foreground);
+  --color-foreground-secondary: var(--sys-foreground-secondary);
+  --color-foreground-muted: var(--sys-foreground-muted);
+
+  /* Border */
+  --color-border: var(--sys-border);
+  --color-border-hover: var(--sys-border-hover);
+
+  /* Brand */
+  --color-primary: var(--sys-primary);
+  --color-primary-hover: var(--sys-primary-hover);
+
+  --color-accent: var(--sys-accent);
+  --color-accent-hover: var(--sys-accent-hover);
+
+  /* States */
+  --color-success: var(--sys-success);
+  --color-warning: var(--sys-warning);
+  --color-danger: var(--sys-danger);
+  --color-info: var(--sys-info);
+}
+
+:root {
+
+  /* Background */
+  --sys-background: var(--color-secondary-100);
+  --sys-surface: var(--color-secondary-50);
+  --sys-surface-hover: var(--color-secondary-200);
+  --sys-card: var(--color-secondary-50);
+
+  /* Foreground */
+  --sys-foreground: var(--color-secondary-900);
+  --sys-foreground-secondary: var(--color-secondary-600);
+  --sys-foreground-muted: var(--color-secondary-500);
+
+  /* Border */
+  --sys-border: var(--color-primary-100);
+  --sys-border-hover: var(--color-primary-200);
+
+  /* Brand: one hue drives primary + accent, only lightness/alpha shifts per state */
+  --sys-primary-h: 261;
+  --sys-primary-s: 100%;
+  --sys-primary-l: 62%;
+  --sys-primary-hover-l: 52%;
+
+  --sys-primary: hsl(var(--sys-primary-h) var(--sys-primary-s) var(--sys-primary-l));
+  --sys-primary-hover: hsl(var(--sys-primary-h) var(--sys-primary-s) var(--sys-primary-hover-l));
+
+  --sys-accent: hsl(var(--sys-primary-h) var(--sys-primary-s) var(--sys-primary-l) / 8%);
+  --sys-accent-hover: hsl(var(--sys-primary-h) var(--sys-primary-s) var(--sys-primary-l) / 15%);
+
+  /* States */
+  --sys-success: #22c55e;
+  --sys-warning: #f59e0b;
+  --sys-danger: #e27c7c8a;
+  --sys-info: #3b82f6;
+}
+
+[data-theme="dark"] {
+
+  /* Midnight palette */
+  --color-secondary-50: #17131f;
+  --color-secondary-100: #0d0b12;
+  --color-secondary-200: #241b31;
+  --color-secondary-300: #2e2340;
+  --color-secondary-400: #3b2c50;
+  --color-secondary-500: #8f83a3;
+  --color-secondary-600: #b4a8c5;
+  --color-secondary-700: #241b31;
+  --color-secondary-800: #17131f;
+  --color-secondary-900: #0d0b12;
+
+  /* Deep violet, kept low-chroma so borders stay quiet rather than glowing */
+  --color-primary-800: #513d68;
+  --color-primary-900: #3d2e50;
+
+  /* Background */
+  --sys-background: var(--color-secondary-100);
+  --sys-surface: var(--color-secondary-50);
+  --sys-surface-hover: var(--color-secondary-200);
+  --sys-card: var(--color-secondary-100);
+
+  /* Foreground */
+  --sys-foreground: #f8fafc;
+  --sys-foreground-secondary: #d4d4d8;
+  --sys-foreground-muted: #a1a1aa;
+
+  /* Border */
+  --sys-border: var(--color-primary-900);
+  --sys-border-hover: var(--color-primary-800);
+
+  /* Brand: same hue as light theme, lightness raised so it glows against the near-black surfaces */
+  --sys-primary-h: 261;
+  --sys-primary-s: 100%;
+  --sys-primary-l: 72%;
+  --sys-primary-hover-l: 80%;
+
+  --sys-primary: hsl(var(--sys-primary-h) var(--sys-primary-s) var(--sys-primary-l));
+  --sys-primary-hover: hsl(var(--sys-primary-h) var(--sys-primary-s) var(--sys-primary-hover-l));
+
+  --sys-accent: hsl(var(--sys-primary-h) var(--sys-primary-s) var(--sys-primary-l) / 12%);
+  --sys-accent-hover: hsl(var(--sys-primary-h) var(--sys-primary-s) var(--sys-primary-l) / 22%);
+
+  /* States */
+  --sys-success: #22c55e;
+  --sys-warning: #f59e0b;
+  --sys-danger: #ef4444;
+  --sys-info: #3b82f6;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    min-height: 100%;
+  }
+
+  html {
+    background-color: var(--color-background);
+    color-scheme: light;
+  }
+
+  html[data-theme="dark"] {
+    color-scheme: dark;
+  }
+
+  body {
+    min-width: 320px;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+}
+
+@layer components {
+  [data-theme="dark"] .bg-card,
+  [data-theme="dark"] .bg-surface {
+    box-shadow:
+      10px 10px 20px rgb(5 4 8 / 55%),
+      -8px -8px 18px rgb(35 27 47 / 45%);
+  }
+
+  [data-theme="dark"] .bg-surface {
+    box-shadow:
+      6px 6px 14px rgb(5 4 8 / 45%),
+      -5px -5px 12px rgb(35 27 47 / 35%);
+  }
+
+  [data-theme="dark"] .border-border {
+    border-color: rgb(75 53 100 / 42%);
+  }
+
+  [data-theme="dark"] .border-border:hover,
+  [data-theme="dark"] .border-border-hover {
+    border-color: rgb(203 167 255 / 48%);
+  }
+
+  [data-theme="dark"] button,
+  [data-theme="dark"] input,
+  [data-theme="dark"] select,
+  [data-theme="dark"] textarea,
+  [data-theme="dark"] .bg-card,
+  [data-theme="dark"] .bg-surface {
+    transition:
+      background-color 320ms ease,
+      border-color 320ms ease,
+      box-shadow 320ms ease,
+      color 320ms ease;
+  }
+
+  [data-theme="dark"] button:focus,
+  [data-theme="dark"] input:focus,
+  [data-theme="dark"] select:focus,
+  [data-theme="dark"] textarea:focus {
+    border-color: transparent;
+    outline: none;
+    box-shadow:
+      0 0 0 1px hsl(var(--sys-primary-h) var(--sys-primary-s) var(--sys-primary-l) / 58%),
+      0 0 22px hsl(var(--sys-primary-h) var(--sys-primary-s) var(--sys-primary-l) / 22%),
+      8px 8px 16px rgb(5 4 8 / 42%),
+      -6px -6px 14px rgb(245 238 255 / 12%);
+  }
+
+  [data-theme="dark"] button:focus-visible,
+  [data-theme="dark"] a:focus-visible {
+    outline: none;
+    box-shadow:
+      0 0 0 2px rgb(245 238 255 / 72%),
+      0 0 24px hsl(var(--sys-primary-h) var(--sys-primary-s) var(--sys-primary-l) / 32%),
+      8px 8px 16px rgb(5 4 8 / 42%),
+      -6px -6px 14px rgb(245 238 255 / 12%);
+  }
+
+  [data-theme="dark"] button:hover,
+  [data-theme="dark"] .bg-card:hover,
+  [data-theme="dark"] .bg-surface:hover {
+    box-shadow:
+      5px 5px 12px rgb(5 4 8 / 48%),
+      -5px -5px 12px rgb(245 238 255 / 13%),
+      0 0 16px hsl(var(--sys-primary-h) var(--sys-primary-s) var(--sys-primary-l) / 10%);
+  }
+
+  /* Primary buttons carry their own violet glow, like the illuminated controls in a neumorphic kit */
+  [data-theme="dark"] .bg-primary {
+    box-shadow:
+      10px 10px 20px rgb(5 4 8 / 55%),
+      -8px -8px 18px rgb(35 27 47 / 45%),
+      0 0 24px hsl(var(--sys-primary-h) var(--sys-primary-s) var(--sys-primary-l) / 35%);
+  }
+
+  [data-theme="dark"] .bg-primary:hover {
+    box-shadow:
+      6px 6px 14px rgb(5 4 8 / 50%),
+      -5px -5px 12px rgb(35 27 47 / 40%),
+      0 0 30px hsl(var(--sys-primary-h) var(--sys-primary-s) var(--sys-primary-l) / 48%);
+  }
+}
+
+[data-theme="dark"] .border-border,
+[data-theme="dark"] .border-border:hover,
+[data-theme="dark"] .border-border-hover {
+  border-color: rgb(245 238 255 / 8%);
+}
+
+[data-theme="dark"] .bg-green-50,
+[data-theme="dark"] .bg-yellow-50,
+[data-theme="dark"] .bg-secondary-100,
+[data-theme="dark"] .bg-red-50 {
+  border: 1px solid rgb(245 238 255 / 7%);
+  box-shadow:
+    inset 2px 2px 5px rgb(5 4 8 / 32%),
+    inset -2px -2px 5px rgb(245 238 255 / 8%),
+    3px 3px 7px rgb(5 4 8 / 22%);
+}
+
+[data-theme="dark"] .bg-green-50 {
+  background-color: #1a2822;
+  color: #a9e1bf;
+}
+
+[data-theme="dark"] .bg-yellow-50 {
+  background-color: #2a251b;
+  color: #e5c77e;
+}
+
+[data-theme="dark"] .bg-secondary-100 {
+  background-color: #211c2b;
+  color: #cfc2e8;
+}
+
+[data-theme="dark"] .bg-red-50 {
+  background-color: #2b1d23;
+  color: #efaeb8;
+}
+
+[data-theme="dark"] .text-green-700,
+[data-theme="dark"] .text-yellow-700,
+[data-theme="dark"] .text-secondary-700,
+[data-theme="dark"] .text-red-700 {
+  color: inherit;
+}
+
+[data-theme="dark"] .hover\:bg-accent-hover:hover {
+  background-color: hsl(var(--sys-primary-h) var(--sys-primary-s) var(--sys-primary-l) / 38%);
+  color: #f5efff;
+}
+
+[data-theme="dark"] .hover\:text-primary-hover:hover {
+  color: #f5efff;
+}
+

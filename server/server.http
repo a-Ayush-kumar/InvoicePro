@@ -1,0 +1,17 @@
+@server_HostAddress = http://localhost:5010
+
+POST {{server_HostAddress}}/api/Merchants
+Content-Type: application/json
+
+{
+  "legalName": "Ayush Technologies Pvt Ltd",
+  "displayName": "Ayush Tech",
+  "email": "ayush1031kumar@gmail.com",
+  "phone": "9955599530",
+  "gstin": "22AAAAA0000A1Z5",
+  "address": "Delhi",
+  "district": "New Delhi",
+  "state": "Delhi",
+  "postalCode": "110044",
+  "country": "India"
+}
